@@ -1,0 +1,52 @@
+
+#include <stdio.h>
+
+int main(){
+	int num,n;
+	char a[100000];
+	scanf("%s",a);
+	scanf("%d",&num);
+	int i=0;
+	while(a[i]!='\0')
+	 {
+	     
+	      if(a[i]<=90&&a[i]>=65)
+	      {
+	         n=a[i]+num;
+	         if(n>90)
+	         {
+	         n=(n-90)%26;
+	         if(n==0)
+	          printf("Z");
+	         else
+	         printf("%c",64+n);
+	         }
+	         else
+	         printf("%c",n);
+	      }  
+	       else if(a[i]<=122&&a[i]>=97)
+	      {
+	         n=a[i]+num;
+	         if(n>122)
+	         {
+	         n=(n-122)%26;
+	          if(n==0)
+	          printf("z");
+	         else
+	         printf("%c",96+n);
+	         }
+	         else
+	         printf("%c",n);
+	     
+	      }
+	       else if(a[i]<=57&&a[i]>=48)
+	      {
+	         n=((a[i]-48)+num)%10;
+	         printf("%d",n);
+	      }
+	      else
+	       printf("%c",a[i]);
+	      i++;
+	 } 
+	 return 0;
+}
