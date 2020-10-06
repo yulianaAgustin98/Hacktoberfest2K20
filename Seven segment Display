@@ -1,0 +1,54 @@
+//This is Hackerearth problem
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   ios::sync_with_stdio(0);
+   cin.tie(0);
+    int t,i,k;
+    string a;
+    cin>>t;
+    while(t--)
+    {
+        int sum=0;
+        cin>>a;
+        for(i=0;a[i]!='\0';i++)
+        {
+            if(a[i]=='0')
+            sum=sum+6;
+            else if(a[i]=='1')
+            sum=sum+2;
+            else if(a[i]=='2')
+            sum=sum+5;
+            else if(a[i]=='3')
+            sum=sum+5;
+            else if(a[i]=='4')
+            sum=sum+4;
+            else if(a[i]=='5')
+            sum=sum+5;
+            else if(a[i]=='6')
+            sum=sum+6;
+            else if(a[i]=='7')
+            sum=sum+3;
+            else if(a[i]=='8')
+            sum=sum+7;
+            else if(a[i]=='9')
+            sum=sum+6;
+        }
+        if(sum%2!=0)
+        {
+            int j=1,l=7;
+            cout<<l;
+            for(k=2;k<=sum/2;k++)
+                cout<<j;
+        }
+        else
+        {
+            int j=1;
+            for(k=1;k<=sum/2;k++)
+                cout<<j;
+         }
+         cout<<"\n";
+    }
+    return 0;
+}
