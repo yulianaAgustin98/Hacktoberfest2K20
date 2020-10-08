@@ -1,0 +1,77 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void sieve(vector<int> &isPrime,bool prime[100001])
+{
+    memset(prime,true,100001);
+    for(int i=2;i*i<=100001;i++)
+    {
+        if(prime[i])
+        {
+          for(int j=i*i;j<=100001;j+=i)
+            {
+              prime[j]=false;
+            }
+        }
+    }
+    for(int i=2;i<100001;i++)
+    {
+        if(prime[i])
+         isPrime.push_back(i);
+    }
+}
+
+int isSmith(int m,int n)
+{
+   
+    int sum=0;
+    while(n)
+    {
+        sum+=n%10;
+        n/=10;
+    }
+   if(sum==m)
+    return 1;
+   else
+    return 0;
+}
+
+int main() {
+	//code
+	bool prime[100001];
+	vector<int> isPrime;
+	sieve(isPrime,prime);
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,count=0;
+	    cin>>n;
+	    int t=n;
+	    for(int j=0;j<isPrime.size();j++)
+	        {
+	            if(n%isPrime[j]==0)
+	             {
+	                 while(n%isPrime[j]==0)
+	                 {
+	                     int f=isPrime[j];
+	                     n/=isPrime[j];
+	                   while(f)
+	                   {
+	                       count+=f%10;
+	                       f/=10;
+	                   }
+	                 }
+	             }
+	             if(n==1)
+	              break;
+	        }
+	        if(prime[t])
+	         cout<<0;
+	        else
+	        cout<<isSmith(count,t);
+	    
+	    cout<<endl;
+	}
+	return 0;
+}
