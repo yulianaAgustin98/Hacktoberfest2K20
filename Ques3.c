@@ -48,5 +48,6 @@ int main()
 	Merge_sort(a,0,9);
 	printf("\n");
 	print(a);
+	
 	return 0;
 }
