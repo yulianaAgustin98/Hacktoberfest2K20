@@ -15,8 +15,10 @@ def bubbleSort(arr):
 			if arr[j] > arr[j+1] :
 				arr[j], arr[j+1] = arr[j+1], arr[j]
 
-# Driver code to test above
-arr = [64, 34, 25, 12, 22, 11, 90]
+# User Input for elements of array(List)
+# Eg- 1 2 3 4 5
+arr=[]
+arr = [int(item) for item in input("Enter the list items : ").split()] 
 
 bubbleSort(arr)
 
